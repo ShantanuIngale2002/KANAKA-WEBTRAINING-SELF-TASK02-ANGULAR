@@ -1,0 +1,27 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+
+
+
+.mainSubmissionButtons:hover{
+    background-color: #410aa7 !important;
+}
+
+/* to blur body we can do this $('body').(add/remove)Class('blur-effect'); */
+.blur-effect {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+.PageTitle{
+    font-size: calc(1.5rem + .3vw) !important;
+    font-weight: 700!important;
+}
+
+.ui-autocomplete {
+    z-index: 10000 !important; /* Adjust the z-index to ensure it appears above the modal */
+}

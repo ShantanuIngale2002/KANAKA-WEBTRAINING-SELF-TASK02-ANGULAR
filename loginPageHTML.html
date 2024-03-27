@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon/loginFavicon.ico" type="image/x-icon">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/commonPageCSS.css">
+    <link rel="stylesheet" href="style/LoginPageCSS.css">
+
+    <!-- international tel no -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+    
+    <!-- SELECT 2CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" /> -->
+    
+
+    <!-- Include jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+
+<body>
+
+    <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
+
+        <!-- BOOTSTRAP RED TOAST -->
+        <div class="row my-3 p-0 d-flex justify-content-center">
+            <div id="viewRedToast" class="toast toast-red m-0 px-0 rounded-4" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1500">
+                <div id="redToastMsgID" class="toast-body redToastCss w-100 text-light fw-bold text-center" style="font-size: 1rem;">
+                  Invalid Credentials !!
+                </div>
+            </div>
+        </div>
+
+        <!-- BOOTSTRAP GREEN TOAST -->
+        <div class="row my-3 p-0 d-flex justify-content-center">
+            <div id="viewGreenToast" class="toast toast-green m-0 px-0 rounded-4" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1500">
+                <div id="greenToastMsgID" class="toast-body greenToastCss w-100 text-light fw-bold text-center" style="font-size: 1rem;">
+                  Valid Credentials !!
+                </div>
+            </div>
+        </div>
+
+        <form action="" class="p-3 col-10 offset-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 rounded bg-white shadow LoginForm">
+            <div class="row">
+
+                <div class="col-12 text-center text-nowrap my-3">
+                    <h3 class="PageTitle" id="loginText">LOGIN</h3>
+                </div>
+
+                <!-- USER CREDENTIALS -->
+                <div class="col-12 mt-2">
+                    <!-- EMAIL -->
+                    <div class="row my-4 d-flex align-items-center justify-content-center">
+                        <label class="pt-2 px-3 mx-0 mb-1 col-12 col-sm-3 text-nowrap text-center" for="email"
+                            style="font-weight: 500;">USERNAME</label>
+                        <input id="getEmail" class="px-3 py-2 mx-2 my-0 col-8 col-sm-7 px-2 m-1 rounded" type="email"
+                            name="" id="" class="" placeholder="Enter email" autocomplete="off" required>
+                    </div>
+                    <!-- PASSWORD -->
+                    <div class="row mt-2 d-flex align-items-center justify-content-center">
+                        <label class="pt-2 px-3 mx-0 mb-1 col-12 col-sm-3 text-nowrap text-center" for="email"
+                            style="font-weight: 500;">PASSWORD</label>
+                        <input id="getPassword" class="px-3 py-2 mx-2 my-0 col-8 col-sm-7 px-2 m-1 rounded"
+                            type="password" name="" id="" class="" placeholder="Enter password" autocomplete="off"
+                            required>
+                    </div>
+                </div>
+
+                <!-- FORGOT PASSWORD -->
+                <div class="col-12 px-1 mt-0 d-flex justify-content-center">
+                    <div class="col-sm-3"></div>
+                    <a href="#" id="forgotPassword" class="col-8 col-sm-7 w-75 px-2 py-1 my-2 text-nowrap text-end fw-bolder"
+                        style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#ForgotModal"
+                        data-bs-whatever="FORGOT PASSWORD">Forgot Password ?</a>
+                    <div class="col-sm-2"></div>
+                </div>
+
+                <!-- LOGIN BUTTON -->
+                <div class="col-12 mt-5 d-flex justify-content-center">
+                    <button type="button" id="loginButton" class="w-75 rounded-3 pt-2 pb-2 fw-bolder btn-primary btn mainSubmissionButtons"
+                        style="background-color: #4e10c2c3; border-color:white;">Log In</button>
+                </div>
+
+                <!-- CREATE NEW ACCOUNT -->
+                <div class="col-12 mt-3 mb-1 d-flex justify-content-center align-items-center"
+                    style="font-weight: 500;">New Here?&nbsp
+                    <a href="#" id="createAccount" class="text-nowrap fw-bolder" style="text-decoration: none;"
+                        data-bs-toggle="modal" data-bs-target="#SignupModal" data-bs-whatever="SIGN UP"
+                        id="createNewAccountLink">Create New Account</a>
+                </div>
+
+            </div>
+
+
+
+            <!-- FORGOT MODAL HERE  -->
+            <!-- id="ForgotModal" tabindex="-1" -->
+            <div class="modal fade" id="ForgotModal" aria-labelledby="ForgotModalLabel" aria-hidden="true"
+                style="overflow:hidden;">
+                <div class="modal-dialog modal-md modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <div class="mt-4 mb-3">
+                            <div class="col-12 d-flex justify-content-evenly align-items-center">
+                                <h5 class="PageTitle modal-title text-dark" id="SignupModalLabel">FORGOT PASSWORD
+                                </h5>
+
+                                <!-- <button id="forgotCloseButton" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    style="position: absolute; border: 2px solid black; right: 3%;"></button> -->
+                            </div>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="row">
+
+                                <!-- USER CRENDENTIALS -->
+                                <div class="col-12">
+                                    <div class="row px-4 d-flex justify-content-center">
+                                        <div class="col-11 px-0 mt-1">
+                                            <label for="" class="col-12 px-0 text-start" style="font-weight: 500;">Enter
+                                                Email Address</label>
+                                            <input type="text" name="" id="getForgotEmail"
+                                                class="col-12 p-2 mx-0 rounded " placeholder="Enter Email Adress" autocomplete="off">
+                                            <span id="fgmailspan" class="col-12 px-1 text-start forgotSpan"
+                                                style="font-weight: 400; color: #ff0000;">Username does not exist</span>
+
+                                            <label for="" class="col-12 mt-3 px-0 text-start"
+                                                style="font-weight: 500;">Enter Password</label>
+                                            <input type="password" name="" id="getForgotPassword"
+                                                class="col-12 p-2 mx-0 rounded" placeholder="Enter Password">
+                                            <span id="fgpassspan" class="col-12 px-1 text-start forgotSpan"
+                                                style="font-weight: 400; color: #ff0000;">Enter a valid Password</span>
+
+                                            <label for="" class="col-12 mt-3 px-0 text-start"
+                                                style="font-weight: 500;">Confirm Password</label>
+                                            <input type="password" name="" id="getForgotConfirmPassword"
+                                                class="col-12 p-2 mx-0 rounded" placeholder="Confirm Password">
+                                            <span id="fgcpassspan" class="col-12 px-1 text-start forgotSpan"
+                                                style="font-weight: 400; color: #ff0000;">Confirm password neatly</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center mt-3">
+                            <div class="col-12 d-flex justify-content-evenly align-items-center">
+                                <div class="col-12 px-4">
+                                    <button type="button" id="forgotButton"
+                                        class="w-75 rounded-3 pt-2 pb-2 fw-bolder btn-primary btn mainSubmissionButtons"
+                                        style="background-color: #4e10c2c3; border-color:white;">Change Password</button>
+                                </div>
+                                <button type="button" class="btn btn-secondary rounded-3 px-2 px-sm-4 mx-4 fw-bold"
+                                    data-bs-dismiss="modal" style="position: absolute; right: 3%;">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FORGOT MODAL ENDS HERE -->
+
+
+            <!-- SIGNUP MODAL HERE -->
+            <div class="modal fade" id="SignupModal" tabindex="-1" aria-labelledby="SignupModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="mt-4">
+                            <div class="col-12 d-flex justify-content-evenly align-items-center">
+                                <h5 class="modal-title text-dark PageTitle" id="SignupModalLabel">SIGNUP
+                                </h5>
+                                <!-- <button id="signupCloseButton"  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    style="position: absolute; border: 2px solid black; right: 3%;">
+                                </button> -->
+                            </div>
+                        </div>
+
+                        <div class="modal-body">
+                            <!-- <form action="" class="p-3 col-10 offset-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 rounded bg-white shadow"> -->
+                            <div class="row">
+
+                                <!-- USER CRENDENTIALS -->
+                                <div class="col-12">
+                                    <div class="row px-4">
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2">
+                                                <label for="" class="col-12 px-0 text-start mt-md-1"
+                                                    style="font-weight: 500;">First Name</label>
+                                                <input type="text" name="" id="getModalFname"
+                                                    class="col p-2 mx-0 rounded" placeholder="Enter First Name"
+                                                    autocomplete="off" required>
+                                                <span id="fnspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Invalid First Name</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2">
+                                                <label for="" class="col-12 px-0 text-start mt-md-1"
+                                                    style="font-weight: 500;">Last Name (opt)</label>
+                                                <input type="text" name="" id="getModalLname"
+                                                    class="col p-2 mx-0 rounded" placeholder="Enter Last Name"
+                                                    autocomplete="off">
+                                                <span id="lnspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Invalid Last Name</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2 mt-md-1">
+                                                <label for="" class="col-12 px-0 text-start"
+                                                    style="font-weight: 500;">Date of Birth</label>
+                                                <input type="date" name="" id="getModalDOB" class="col p-2 mx-0 rounded" min="1964-01-01" max="2009-12-31" autocomplete="off" required>
+                                                <span id="dobspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Age must greater than 15</span>
+                                            </div>
+
+                                            <div class="row mt-3 mx-2">
+                                                <label for="" class="col-12 mb-1 px-0 text-start mt-md-1" id="getModalRole"
+                                                    style="font-weight:500; border: 2px solid white;">Role</label>
+
+                                                <div class="col-12 my-1">
+                                                    <div class="row">
+                                                        <div class="col-5">
+                                                            <div class="row">
+                                                                <label class="col-6 px-0 text-center"
+                                                                    style="font-weight:500;" for="">Admin</label>
+                                                                <input class="col-6 my-1" type="checkbox" name=""
+                                                                    id="getModalAdminCheck">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-7">
+                                                            <div class="row">
+                                                                <label class="col-6 px-0 text-end" for="">Read</label>
+                                                                <input class="my-1 col-6" type="checkbox" name=""
+                                                                    id="getModalAdminReadCheck">
+                                                            </div>
+                                                            <div class="row">
+                                                                <label class="col-6 px-0 text-end" for="">Write</label>
+                                                                <input class=" my-1 col-6" type="checkbox" name=""
+                                                                    id="getModalAdminWriteCheck">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 my-1">
+                                                    <div class="row">
+                                                        <div class="col-5">
+                                                            <div class="row">
+                                                                <label class="col-6 px-0 text-center"
+                                                                    style="font-weight:500;" for="">User</label>
+                                                                <input class="col-6 my-1" type="checkbox" name=""
+                                                                    id="getModalUserCheck">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-7">
+                                                            <div class="row">
+                                                                <label class="col-6 px-0 text-end" for="">Read</label>
+                                                                <input class="my-1 col-6" type="checkbox" name=""
+                                                                    id="getModalUserReadCheck">
+                                                            </div>
+                                                            <div class="row">
+                                                                <label class="col-6 px-0 text-end" for="">Write</label>
+                                                                <input class=" my-1 col-6" type="checkbox" name=""
+                                                                    id="getModalUserWriteCheck">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <span id="rolespan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Select appropriate
+                                                    role</span>
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2">
+                                                <label for="" class="col-12 px-0 text-start mt-md-1"
+                                                    style="font-weight: 500;">Enter Adress (opt)</label>
+                                                <textarea name="" id="getModalAddress" class="col p-2 mx-0 rounded"
+                                                    rows="3" placeholder="Enter you Address"></textarea>
+                                                <span id="addressspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Enter appropriate
+                                                    address</span>
+                                            </div>
+
+                                            <div class="row mx-2 my-1">
+                                                <label for="" id="getModalGender" class="col-12  px-0 text-start mt-md-1"
+                                                    style="border:2px solid #ffffff; font-weight: 500;">Gender</label>
+                                                <div class="form-check mt-1">
+                                                    <label for=""
+                                                        class="col-3 px-0 text-start form-check-label">Male</label>
+                                                    <input type="radio" name="gender" id="getModalGenderMale"
+                                                        class="getModalGender" class="mx-2 form-check-input"
+                                                        style="float: none  !important;" value="male">
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label for=""
+                                                        class="col-3 px-0 text-start form-check-label">Female</label>
+                                                    <input type="radio" name="gender" id="getModalGenderFemale"
+                                                        class="getModalGender" class="mx-2 form-check-input"
+                                                        style="float: none  !important;" value="female">
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label for=""
+                                                        class="col-3 px-0 text-start form-check-label">Other</label>
+                                                    <input type="radio" name="gender" id="getModalGenderOther"
+                                                        class="getModalGender" class="mx-2 form-check-input"
+                                                        style="float: none  !important;" value="other">
+                                                </div>
+                                                <span id="gspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Select an option</span>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2">
+                                                <label for="" class="col-12 px-0 text-start mt-md-1"
+                                                    style="font-weight: 500;">Preferred Language</label>
+                                                <select name="" class="col p-2 mx-0 rounded"
+                                                    id="getModalPreferredLanguage" placeholder="Select a Language">
+                                                    <option value="">Select</option>
+                                                </select>
+
+                                                <span id="plspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Select an option</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2">
+                                                <label for="" class="col-12 px-0 text-start mt-md-1"
+                                                    style="font-weight: 500;">Programming Skill</label>
+
+                                                <!-- <input type="text" id="getModalProgrammingSkill" list="skillsList" class="form-control"> -->
+
+                                                <input name="" class="col p-2 mx-0 rounded"
+                                                    id="getModalProgrammingSkill" list="getModalSkillList">
+
+                                                <!-- <datalist id="getModalSkillList" style="display: none;">
+                                                    <option value="">Select an unique option</option>
+                                                </datalist> -->
+
+                                                <!-- <select name="" class="col p-2 mx-0 rounded" id="getModalProgrammingSkill">
+                                                        <option value="">Select</option>
+                                                    </select> -->
+
+                                                <div class="col-12 d-flex flex-wrap gap-0 text-nowrap"
+                                                    id="appendProgSkillsHere">
+                                                </div>
+
+                                                <!-- <datalist id="skillsList">
+                                                      <option value="Java">
+                                                      <option value="Python">
+                                                    </datalist> -->
+
+
+                                                <!-- <input type="text" name="" class="col p-2 mx-0 rounded"
+                                                    id="getModalProgrammingSkill" placeholder="Select a Language"
+                                                    list="programmingskilldatalist">
+                                                <datalist id="programmingskilldatalist"></datalist> -->
+
+                                                <span id="psspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Select atleast one also unique option</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2">
+                                                <label for="" class="col-12 px-0 text-start mt-md-1"
+                                                    style="font-weight: 500;">Enter Email Address</label>
+                                                <input type="email" name="" id="getModalEmail"
+                                                    class="col p-2 mx-0 rounded" placeholder="Enter Email"
+                                                    autocomplete="off" required>
+                                                <span id="espan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Please enter valid email
+                                                    address</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2">
+                                                <label for="" class="col-12 px-0 text-start mt-md-1"
+                                                    style="font-weight: 500;">Enter Contact No.</label>
+
+                                                <div class="col-12 px-0">
+
+                                                    <!-- <input type="tel" id="getModalContact" placeholder="Enter phone number"> -->
+                                                    <!-- <input type="tel" id="getModalContact" placeholder="Enter phone number"> -->
+                                                    <!-- <input type="text" id="getModalTel" class="w-25"> -->
+                                                    <input type="text" name="" class="from-control w-100 py-2 rounded" id="getModalContact">
+
+                                                </div>
+
+                                                <span id="cspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Required! 10 digits
+                                                    number</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2">
+                                                <label for="" class="col-12 px-0 text-start mt-md-1"
+                                                    style="font-weight: 500;">Enter Password</label>
+                                                <input type="password" name="" id="getModalPassword"
+                                                    class="col p-2 mx-0 rounded" placeholder="Enter Passsword"
+                                                    autocomplete="off" required>
+                                                <span id="pspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Please enter valid
+                                                    password</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 px-0 mt-1">
+                                            <div class="row mx-2">
+                                                <label for="" class="col-12 px-0 text-start mt-md-1"
+                                                    style="font-weight: 500;">Confirm Password</label>
+                                                <input type="password" name="" id="getModalConfirmPassword"
+                                                    class="col p-2 mx-0 rounded" placeholder="Confirm Password"
+                                                    autocomplete="off" required>
+                                                <span id="cpspan" class="col-12 px-2 text-start mb-1 signupspan"
+                                                    style="font-weight: 400; color: #ff0000;">Confirm the password
+                                                    neatly</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- </form> -->
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <div class="col-12 d-flex justify-content-evenly align-items-center">
+                                <div class="col-12 px-4">
+                                    <button type="button" id="signupButton" class="w-75 rounded-3 pt-2 pb-2 fw-bolder btn-primary btn mainSubmissionButtons" style="background-color:#4e10c2c3; border-color:white;">Sign Up</button>
+                                        <!-- background-color:4e10c2c3 #06bab4; -->
+                                </div>
+                                <button type="button" class="btn btn-secondary rounded-3 px-2 px-sm-4 mx-4 fw-bold"
+                                    data-bs-dismiss="modal" style="position: absolute; right: 3%;">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+            <!-- </form> -->
+    </div>
+
+
+
+
+
+
+
+    <!-- SCRIPTS -->
+
+    <!-- bootstrap/jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- int tel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include jQuery UI library -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    
+
+    <script src="scripts/loginPageJS.js"></script>
+    <!-- <script src="scripts/homePageJS.js"></script> -->
+
+
+    
+</body>
+
+</html>

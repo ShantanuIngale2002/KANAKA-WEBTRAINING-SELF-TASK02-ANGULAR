@@ -1,0 +1,91 @@
+
+
+
+
+
+
+#dropdownMenuButton:focus, #dropdownMenuButton:active{
+    outline: none!important;
+    box-shadow: none!important;
+    border: none;
+}
+#profileInfoCloseButton:focus, #profileInfoCloseButton:active,
+#profileEditCloseButton:focus, #profileEditCloseButton:active{
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+
+
+.infoLabel, .editLabel{
+    font-weight: 500!important;
+    margin-top: 2%!important;
+}
+
+.infoEditIdDiv{
+    color: white;
+    background-color: #086ab0;
+    border-radius: 10px;
+}
+#profileInfoCloseButton{
+    background-color: white!important;
+    box-shadow: none;
+}
+#profileEditCloseButton{
+    background-color: white!important;
+    box-shadow: none;
+}
+.pillSpan{
+    background-color: #327fc7!important;
+}
+.infoDiv{
+    font-weight: 400px!important;
+}
+.editInput{
+    border: 2px solid #363636;
+}
+.editInput:hover{
+    background-color: #edfdfd;
+    border-color: #8b94c5;
+}
+
+.hrGreen{
+    border-top: 2px solid #009d76!important;
+    border-radius: 40px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+#roleHrTag{
+    margin: 0px;
+    border-top: 1px solid #0000001a;
+}
+
+
+/* int tel */
+.iti.iti--allow-dropdown{
+    width: 100%;
+}
+.iti-mobile .iti__country-list{
+    max-width: fit-content;
+}
+
+
+/* profile info skill pills */
+.pillSpan{
+    border-radius: 30px;
+}
+
+.crossIcon {
+    /* Style the cross icon */
+    visibility: visible !important;
+    margin-left: 1%;
+    margin-right: 2%;
+    cursor: pointer;
+    color: white;
+    /* Show a pointer cursor when hovering over the icon */
+    /* margin-left: 5px; Add some spacing between the text and the icon */
+}
+.crossIcon:hover{
+    color: black;
+    background-color: white;
+}

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon/loginFavicon.ico" type="image/x-icon">
+    <title>HOME PAGE</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- international tel no -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+
+    <link rel="stylesheet" href="style/CommonPageCSS.css">
+    <link rel="stylesheet" href="style/HomePageCSS.css">
+    <link rel="stylesheet" href="style/angularPageCSS.css">
+
+    <!-- Include jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+
+    <!-- <div class=""> -->
+    <div id="overNavbar" class="w-100 fixed-top" style="  
+    z-index:1;">
+        <nav class="navbar navbar-expand navbar-light px-1 px-sm-3 w-100">
+            <div class="d-flex justify-content-between w-100 my-1">
+                <div class="d-flex gap-2 gap-sm-4">
+                    <div id="hamburgerButtonDiv">
+                        <button class="btn p-1" style="border: none;">
+                            <!-- <img class="navbar-toggler-icon text-white" src="./assets/image/whitehamburger.png" alt="" style="height:1em; width:1em;"> -->
+                            <div class="navbar-toggler-icon text-white" style="background-image: url(./assets/image/whitehamburger.png);background-size: 18px;"></div>
+                        </button>
+                    </div>
+                    <div>
+                        <img id="angularLogoNameChange" src="./assets/image/angularlogowhite.png" width="150px" alt="">
+                        <img id="angularLogoChange" src="./assets/image/angularonlylogowhite.png" width="40x" alt="">
+                    </div>
+                    <div id="navItemsChange">
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <div class="navbar-nav">
+                                <a href="#project" class="nav-item nav-link text-uppercase mx-1">docs</a>
+                                <a href="#about" class="nav-item nav-link text-uppercase mx-1">community</a>
+                                <a href="#contact" class="nav-item nav-link text-uppercase mx-1">blog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex mx-1 mx-sm-2 gap-1">
+                    <div class="d-flex align-items-center">
+                        <div id="removeSearchBar" class="d-flex justify-content-end">
+                            <div class="input-wrapper d-flex justify-content-end" style="position:relative;display:block;">
+                                <input id="searchBar" type="text" class="w-75 w-sm-100 py-1 px-3 rounded-4 border-0" placeholder="Search" style="outline: none;">
+                                <span id="searchBarSlashBox" class="border-1 px-2 rounded-2" style="position:absolute;top:10%;right:5%;background-color: transparent;color:#0000006e;border:1px solid #0000006e;cursor: pointer;">/</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="px-1 collapse navbar-collapse gap-1" id="navbarCollapse">
+                            <div id="removeLogos">
+                                <button class="btn rounded-0" style="border-right:2px solid white">
+                                    <img src="./assets/image/moonthemeicon.png" alt="">
+                                </button>
+                                <button class="btn border-0">
+                                    <img src="./assets/image/twitter.png" alt="">
+                                </button>
+                                <button class="btn border-0">
+                                    <img src="./assets/image/github.png" alt="" width="30px">
+                                </button>
+                                <button class="btn border-0 pb-2">
+                                    <img src="./assets/image/youtube.png" alt="" width="30px">
+                                </button>
+                            </div>
+                            <div>
+                                <div class="btn-group">
+                                    <div href="" class="navbar-brank m-0">
+                                        <div class="dropdown">
+                                            <button type="button" id="dropdownMenuButton" class="btn dropdown-toggle p-0 rounded-0 px-1"
+                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="color:rgb(255, 255, 255);border: none;border-left:2px solid white">
+                                                <img id="navbarProfilePic" class="m-0" src="" alt="Profile Pic"
+                                                    width="35px" height="35px">
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="dropdownMenuButton"
+                                                style="border-radius: 20px!important; background-color: #0080dbc0;">
+                                                <button type="button" id="profileInfoButton" class="col-12 px-0 my-1 btn btn-light"
+                                                    style="border-radius: 20px!important;" data-bs-toggle="modal"
+                                                    data-bs-target="#profileInfoModal">View Profile</button>
+                                                <button type="button" id="profileEditButton" class="col-12 px-0 my-1 btn btn-light"
+                                                    style="border-radius: 20px!important;" data-bs-toggle="modal"
+                                                    data-bs-target="#profileEditModal">Edit Profile</button>
+                                                <div class="dropdown-divider"></div>
+                                                <button type="button" id="profileLogOutButton"
+                                                    class="col-12 px-0 py-2 my-1 btn-info border bg-dark text-warning"
+                                                    style="border-radius: 20px!important;">Log out</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- </div> -->
+
+
+
+
+    <div class="container-fluid vh-100 px-0" style="margin-top:67px; margin-bottom: 10px;">
+
+        <div class="row">
+
+            <div id="leftPanelDiv" style="width: 25%;">
+                <div class="px-0 leftSideBar bg-light fixed-top vh-100" style="margin-top:67px; max-width:18rem;">
+
+                    <div class="left-right-panel-scrollable-div" class="py-3">
+
+                        <!-- introduction button -->
+                        <button id="introButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-1">Introduction</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+
+                        <!-- getting startded button -->
+                        <button id="gettingStartedButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-0">Getting started</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="gettingStartedButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">What is Angular?</p>
+                        </button>
+                        <button class="gettingStartedButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Try it</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="gettingStartedButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1">Setup</p>
+                        </button>
+                        
+                        <!-- understanding angular button -->
+                        <button id="understandingAngularButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-1">Understanding Angular</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="understandingAngularButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Overview</p>
+                        </button>
+                        <button class="understandingAngularButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Components</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="understandingAngularButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1">Templates</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="understandingAngularButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Directives</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="understandingAngularButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1 ">Dependancies Injection</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        
+                        <!-- developer guides button -->
+                        <button id="developersGuidesButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-1">Developers guides</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Overview</p>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Standalone</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1">Change detection</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Routing and navigation</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1 ">Forms</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">esbuild-based Builds</p>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">HTTP client</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1">Hydration</p>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Deferrable views</p>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1 ">Image optimization</p>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Testing</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Internationalization</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Animations</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Service Workers & PWA</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1 ">Web workers</p>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1 ">Server-sider rendering</p>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-1 ">Prerendering</p>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Angular Libraries</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+                        <button class="developersGuidesButtonIn btn w-100 d-flex justify-content-between left-panel-button" style="padding-left: 13%;">
+                            <p class="left-panel-p text-nowrap my-0">Feature preview</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+
+                        <!-- best practices button -->
+                        <button id="bestPracticesButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-1">Best practices</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+
+                        <!-- angular tools button -->
+                        <button id="angularToolsButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-1">Angular tools</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+
+                        <!-- tutorials button -->
+                        <button id="tutorialsButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-1">Tutorials</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+
+                        <!-- update and releases button -->
+                        <button id="updateAndReleaseButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-1">Update and releases</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+
+                        <!-- reference button -->
+                        <button id="referenceButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-1">Reference</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+
+                        <!-- Documentation and contributors guide button -->
+                        <button id="DACGButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p my-1 text-start">Documentation and contributors guide</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+
+                        <hr class="text-secondary mx-2">
+
+                        <!-- docs version button -->
+                        <button id="docsVersionButton" class="btn w-100 d-flex justify-content-between left-panel-button">
+                            <p class="left-panel-p text-nowrap my-1">Docs Version</p>
+                            <span class="left-panel-span">></span>
+                        </button>
+
+                    </div>
+                
+                </div>
+            </div>
+
+
+            <section class="d-flex px-0" style="width: 55%; display: inline-block;">
+
+                <div class="px-5 py-4" data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+
+                    <h1 class="" id="whatisangular">What is Angular?</h1>
+                    <p class="mt-5">Angular is a development platform, built on TypeScript.</p>
+                    <p>As a platform, Angular includes:</p>
+                    <ul class="content-bullets">
+                        <li>A component-based framework for building scalable web applications</li>
+                        <li>A collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more</li>
+                        <li>A suite of developer tools to help you develop, build, test, and update your code</li>
+                    </ul>
+                    <p>With Angular, you're taking advantage of a platform that can scale from single-developer projects to enterprise-level applications. Best of all, the Angular ecosystem consists of a diverse group of over 1.7 million developers, library authors, and content creators.</p>
+
+                    <hr class="mx-0 my-5">
+
+                    <h2 id="prerequisites">Prerequisites</h2>
+                    <p class="mt-3 mb-4">Like most modern frameworks, Angular expects you to be familiar with HTML, CSS and JavaScript. In addition, it’s recommended to have familiarity with the following concepts and tools:</p>
+                    <h3 id="prerequisites-concepts">Concepts</h3>
+                    <ul class="content-bullets mt-3 mb-4">
+                        <li><a href="#">Javascript Classes</a></li>
+                        <li><a href="#">Typescripts fundamentals</a></li>
+                        <li><a href="#">Typescripts Decorators</a></li>
+                    </ul>
+                    <h3 id="prerequisites-tools">Tools</h3>
+                    <ul class="content-bullets mt-3">
+                        <li><p><b style="display: inline-block;">TypeScript -</b> This is shipped by default with every Angular app to provide improved tooling and enhanced maintainability for a better developer experience.</p></li>
+                        <li><p><b>Command Line Interface (CLI) -</b> Angular uses a compiler in order to abstract tooling complexity and optimize your code so you can focus on building your app.</p></li>
+                    </ul>
+
+                    <hr class="mx-0 my-5">
+
+                    <h2 id="components">Components</h2>
+                    <p class="mt-3 mb-4">Components are the fundamental building block for creating applications in Angular. By leveraging component architecture, Angular aims to provide structure for organizing your project into manageable, well organized parts with clear responsibilities so that your code is maintainable and scalable.</p>
+
+                </div>
+
+            </section>
+
+
+            <div id="rightPanelDiv" class="d-flex fixed-top" style="left:85%; margin-top: 67px;z-index:0;">
+                <div class="vh-100 left-right-panel-scrollable-div">
+                    <nav id="navbar-example3" class="navbar navbar-light bg-white align-items-start">
+                        <nav class="nav nav-pills flex-column w-100" style="border-left: 2px solid #0000003f;">
+
+                          <a class="nav-link" href="#whatisangular">What is Angular?</a>
+
+                          <a class="nav-link ml-3 my-1" href="#prerequisites">Prerequisites</a>
+                          <nav class="nav nav-pills flex-column px-3">
+                            <a class="nav-link ml-3 my-1" href="#prerequisites-concepts">Concepts</a>
+                            <a class="nav-link ml-3 my-1" href="#prerequisites-tools">Tools</a>
+                          </nav>
+
+                          <a class="nav-link" href="#components">Components</a>
+                          <nav class="nav nav-pills flex-column px-3">
+                            <a class="nav-link ml-3 my-1" href="#components-behaviour">Behaviour</a>
+                            <a class="nav-link ml-3 my-1" href="#components-templates">Templates</a>
+                            <a class="nav-link ml-3 my-1" href="#components-styles">Styles</a>
+                          </nav>
+
+                          <a class="nav-link" href="#directives">Directives</a>
+                          <nav class="nav nav-pills flex-column px-3">
+                            <a class="nav-link ml-3 my-1" href="#directives-conditionalrendering">Conditional rendering</a>
+                            <a class="nav-link ml-3 my-1" href="#directives-renderingalist">Rendeing a list</a>
+                            <a class="nav-link ml-3 my-1" href="#directives-customdirectives">Custom directives</a>
+                          </nav>
+
+                          <a class="nav-link" href="#services">Services</a>
+                          <a class="nav-link" href="#organization">Organization</a>
+                          <a class="nav-link" href="#commandlineinterface">Command Line Interface</a>
+                          <a class="nav-link" href="#firstpartylibraries">First-party libraries</a>
+                          <a class="nav-link" href="#nextsteps">Next Steps</a>
+                        </nav>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+
+    </div> 
+
+
+
+
+
+
+
+
+
+    <!-- BOOTSTRAP TOAST TO TEMPORARILY INSTRUCT USER -->
+    <div class="d-flex justify-content-center position-absolute w-100" style="top:10%">
+        <div id="viewHomeToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1200">
+            <div class="toast-header">
+                <strong class="mr-auto">Home page Toast</strong>
+            </div>
+            <div class="toast-body">
+                <div class="col-12" id="homeToastMsg">Your message goes here.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- PROFILE INFORMATION MODAL STARTS HERE -->
+    <div class="modal fade" id="profileInfoModal" tabindex="-1" aria-labelledby="profileInfoButton" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header mt-4">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <h5 class="modal-title text-center fw-bolder fs-4 PageTitle">PROFILE INFORMATION</h5>
+                        <button type="button" id="profileInfoCloseButton" class="close mx-1 px-0 pt-0 pb-2"
+                            data-bs-dismiss="modal" aria-label="Close"
+                            style="position: absolute; right: 3%;border: none;">
+                            <span id="profileInfoCloseButtonFont" class="" aria-hidden="true"
+                                style="border: none;font-size: 2.5rem!important;">&times;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="px-4 mb-0 d-flex justify-content-center">
+                        <img id="profileInfoPic" src="" alt="" height="80px" width="80px">
+                    </div>
+
+                    <div class="row px-4 mb-2 d-flex justify-content-center">
+                        <span class="infoEditIdDiv px-3 w-50 text-center">
+                            <span class="px-0 m-0 infoLabel">Profile ID :
+                                <span class="px-0" style="margin-top: 2%!important;">
+                                    <span id="profileInfoID">-</span>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+
+
+                    <div class="row px-4">
+
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">User Email :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoEmail">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Role :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoRole">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                    </div>
+
+                    <div class="row px-4">
+
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Name :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoName">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Contact No :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoContact">-</div>
+                            <hr class="hrGreen">
+                        </div>
+
+                    </div>
+
+                    <div class="row px-4">
+
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Date of Birth :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoDOB">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Gender :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoGender">-</div>
+                            <hr class="hrGreen">
+                        </div>
+
+                    </div>
+
+                    <div class="row px-4">
+
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Language :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoLanguage">-</div>
+                            <hr class="hrGreen">
+                        </div>
+
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Address :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoAddress">-</div>
+                            <hr class="hrGreen">
+                        </div>
+
+                    </div>
+
+                    <!-- <hr> -->
+                    <div class="row px-4 mb-2">
+                        <label class="col-12 px-0 m-0 text-center infoLabel">Skills Selected :</label>
+                        <div class="col-12 px-3 d-flex flex-wrap " id="profileInfoSkillPills"></div>
+                    </div>
+                    <!-- <hr> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PROFILE INFORMATION MODAL ENDS HERE -->
+
+
+
+
+
+
+
+    <!-- PROFILE EDIT SECTION MODAL STARTS HERE -->
+    <div class="modal fade" id="profileEditModal" tabindex="-1" aria-labelledby="profileEditButton" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header mt-4">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <h5 class="modal-title text-dark fw-bold fs-4 PageTitle">EDIT PROFILE</h5>
+                        <!-- <button id="profileEditCloseButton" type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; right: 3%;">
+                            <span class="pb-1 px-2 rounded-circle" aria-hidden="true" style="border: 2px solid black; padding-bottom: 1px;">&times;</span>
+                        </button> -->
+                    </div>
+                </div>
+
+                <div class="modal-body">
+
+                    <!-- <div class="row px-4 mb-3 d-flex justify-content-center">
+                        <label class="px-0 m-0 text-start infoLabel">Profile ID :</label>
+                        <div class="px-0 mx-2 text-center" style="margin-top: 2%!important;">
+                            <span class="infoEditIdDiv px-3" id="profileEditID">id</span>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="row px-4">
+                        <div class="d-flex justify-content-center w-100">
+                            <div class="" style="font-size: 1rem!important;">Changes performed successfully !!</div>
+                        </div>
+                    </div> -->
+
+                    <div class="row px-4">
+
+                        <div class="col-12 col-sm-6">
+                            <!-- <hr> -->
+                            <label class="col-12 px-0 m-0 text-start editLabel">First Name :</label>
+                            <!-- <div class="col-12 px-0 m-0" id="editInfoName">prevName</div> -->
+                            <input type="text" class="col w-100 p-2  mx-0 rounded editInput" id="profileEditFname"
+                                autocomplete="off"></input>
+                            <span id="editfnamespan" class="col-12 px-2 text-start mb-1 alertSpan"
+                                style="font-weight: 400; color: #ff0000;">Enter a valid name</span>
+                        </div>
+
+                        <div class="col-12 col-sm-6">
+                            <!-- <hr> -->
+                            <label class="col-12 px-0 m-0 text-start editLabel">Last Name (opt) :</label>
+                            <!-- <div class="col-12 px-0 m-0" id="editInfoName">prevName</div> -->
+                            <input type="text" class="col w-100 p-2  mx-0 rounded editInput" id="profileEditLname"
+                                autocomplete="off"></input>
+                            <span id="editlnamespan" class="col-12 px-2 text-start mb-1 alertSpan"
+                                style="font-weight: 400; color: #ff0000;">Enter a valid name</span>
+                        </div>
+
+                    </div>
+
+                    <div class="row px-4">
+
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-start editLabel">User Email :</label>
+                            <!-- <div class="col-12 px-0 m-0" id="editInfoEmail">prevEmail</div> -->
+                            <input type="email" class="col w-100 p-2 mx-0 rounded editInput" id="profileEditEmail"
+                                placeholder="Change email here" autocomplete="off"></input>
+                            <span id="editemailspan" class="col-12 px-2 text-start mb-1 alertSpan"
+                                style="font-weight: 400; color: #ff0000;">Enter a valid email</span>
+                        </div>
+
+                        <div class="col-12 col-sm-6">
+                            <!-- <hr> -->
+                            <label class="col-12 px-0 m-0 text-start editLabel">Contact No :</label>
+                            <!-- <div class="col-12 px-0 m-0" id="editInfoContact">prevContact</div> -->
+                            <input type="tel" class="col w-100 py-2 mx-0  rounded editInput" id="profileEditContact"
+                                autocomplete="off"></input>
+                            <span id="editcontactspan" class="col-12 px-2 text-start mb-1 alertSpan"
+                                style="font-weight: 400; color: #ff0000;">Enter a valid contact</span>
+                        </div>
+
+                    </div>
+
+                    <div class="row px-4">
+
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-start editLabel">Date of Birth :</label>
+                            <!-- <div class="col-12 px-0 m-0" id="editInfoDOB">prevDOB</div> -->
+                            <input type="date" class="col w-100 p-2 mx-0 rounded editInput" id="profileEditDOB"
+                                min="1964-01-01" max="2009-12-31" autocomplete="off"></input>
+                            <span id="editdobspan" class="col-12 px-2 text-start mb-1 alertSpan"
+                                style="font-weight: 400; color: #ff0000;">Age must be greater than 15</span>
+                        </div>
+
+                        <div class="col-12 col-sm-6">
+                            <!-- <hr> -->
+                            <label class="col-12 px-0 m-0 text-start editLabel">Language :</label>
+                            <!-- <div class="col-12 px-0 m-0" id="editInfoLanguage">prevLang</div> -->
+                            <select name="" class="col w-100 p-2 mx-0 rounded editInput" id="profileEditLanguage"
+                                placeholder="Select a Language">
+                                <option value="">Select</option>
+                            </select>
+                            <span id="editlangspan" class="col-12 px-2 text-start mb-1 alertSpan"
+                                style="font-weight: 400; color: #ff0000;">Select a language</span>
+                        </div>
+                    </div>
+
+                    <div class="row px-4">
+
+                        <div class="col-12 col-sm-6">
+                            <!-- <hr> -->
+                            <label class="col-12 px-0 m-0 text-start editLabel">Gender :</label>
+                            <!-- <div class="col-12 px-0 m-0" id="editInfoGender">prevGender</div> -->
+
+                            <div class="form-check mt-1">
+                                <label for="" class="col-3 px-0 text-start form-check-label">Male</label>
+                                <input type="radio" name="gender" id="profileEditGenderMale" class="profileEditGender"
+                                    class="mx-2 form-check-input" style="float: none  !important;" value="male">
+                            </div>
+
+                            <div class="form-check">
+                                <label for="" class="col-3 px-0 text-start form-check-label">Female</label>
+                                <input type="radio" name="gender" id="profileEditGenderFemale" class="profileEditGender"
+                                    class="mx-2 form-check-input" style="float: none  !important;" value="female">
+                            </div>
+
+                            <div class="form-check">
+                                <label for="" class="col-3 px-0 text-start form-check-label">Other</label>
+                                <input type="radio" name="gender" id="profileEditGenderOther" class="profileEditGender"
+                                    class="mx-2 form-check-input" style="float: none  !important;" value="other">
+                            </div>
+                            <span id="editgenderspan" class="col-12 px-2 text-start mb-1 alertSpan"
+                                style="font-weight: 400; color: #ff0000;">Select a gender</span>
+
+
+
+
+
+                            <!-- <div class="col-12 col-sm-6"> -->
+                            <!-- <hr> -->
+                            <label class="col-12 px-0 m-0 text-start editLabel">Address :</label>
+                            <!-- <div class="col-12 px-0 m-0" id="editInfoAddress">prevAddress</div> -->
+                            <textarea class="col w-100 p-2 mx-0 rounded editInput" rows="3" id="profileEditAddress"
+                                autocomplete="off">addressfull</textarea>
+                            <span id="editaddressspan" class="col-12 px-2 text-start mb-1 alertSpan"
+                                style="font-weight: 400; color: #ff0000;">Enter proper address</span>
+                            <!-- </div> -->
+
+                        </div>
+
+
+                        <div class="col-12 col-sm-6">
+                            <!-- <hr> -->
+                            <label class="col-12 px-0 m-0 text-start editLabel">Role (uneditable) :</label>
+                            <!-- <div class="col-12 px-0 m-0" id="editInfoRole">prevRole</div> -->
+                            <!-- <input class="col p-0 mx-0 text-center rounded editInput" id="profileEditRole">role</input> -->
+                            <div class="col-12 my-1">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="row">
+                                            <label class="col-6 px-0 text-center" style="font-weight:500;"
+                                                for="">Admin</label>
+                                            <input class="col-6 my-2" type="checkbox" name=""
+                                                id="profileEditAdminCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="row">
+                                            <label class="col-6 px-0 text-center" for="">Read</label>
+                                            <input class="my-2 col-6" type="checkbox" name=""
+                                                id="profileEditAdminReadCheck">
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-6 px-0 text-center" for="">Write</label>
+                                            <input class=" my-2 col-6" type="checkbox" name=""
+                                                id="profileEditAdminWriteCheck">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 my-1">
+                                <hr id="roleHrTag">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="row">
+                                            <label class="col-6 px-0 text-center" style="font-weight:500;"
+                                                for="">User</label>
+                                            <input class="col-6 my-2" type="checkbox" name="" id="profileEditUserCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="row">
+                                            <label class="col-6 px-0 text-center" for="">Read</label>
+                                            <input class="my-2 col-6" type="checkbox" name=""
+                                                id="profileEditUserReadCheck">
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-6 px-0 text-center" for="">Write</label>
+                                            <input class=" my-2 col-6" type="checkbox" name=""
+                                                id="profileEditUserWriteCheck">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <span id="editrolespan" class="col-12 px-2 text-start mb-1 alertSpan" style="font-weight: 400; color: #ff0000;">Enter a valid role</span> -->
+
+
+
+                            <label class="col-12 px-0 m-0 editLabel">Edit Skills :</label>
+                            <input type="text" name="" class="col w-100 p-2 mx-0 rounded editInput"
+                                id="profileEditSkill" list="profileEditSkillList" autocomplete="off">
+                            <!-- <datalist id="profileEditSkillList">
+                                <option value="">Select an unique option</option>
+                            </datalist> -->
+
+                            <div class="px-1 d-flex flex-wrap " id="profileEditSkillPills"></div>
+
+                            <span id="editskillspan" class="col-12 py-md-4 py-sm-2 px-2 text-start mb-1 alertSpan"
+                                style="font-weight: 400; color: #ff0000;">Enter atleast one also unique skills</span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- <div class="row px-4">
+
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-start editLabel">Change Password (opt) :</label>
+                            <input type="password" class="col p-2  mx-0 rounded editInput" id="profileEditPassword"></input>
+                            <span id="editpassspan" class="col-12 px-2 text-start mb-1 alertSpan" style="font-weight: 400; color: #ff0000;">Enter a valid password</span>
+                        </div>
+
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-start editLabel">Confirm Password :</label>
+                            <input type="password" class="col p-2  mx-0 rounded editInput" id="profileEditConfirmPassword"></input>
+                            <span id="editcpassspan" class="col-12 px-2 text-start mb-1 alertSpan" style="font-weight: 400; color: #ff0000;">Neatly confirm password</span>
+                       </div>
+
+                    </div> -->
+
+
+                    <div class="row mb-2"><br></div>
+
+                    <div class="modal-footer mt-3">
+                        <div class="col-12 d-flex justify-content-evenly align-items-center">
+                            <div class="col-12 px-4">
+                                <button type="button" id="profileEditChangeButton"
+                                    class="w-75 pt-2 pb-2 fw-bolder btn-primary btn mainSubmissionButtons"
+                                    style="background-color: #4e10c2c3; border-color:white;border-radius:10px;font-weight: 500;">Save
+                                    Changes</button>
+                            </div>
+                            <button type="button" class="btn btn-secondary px-2 px-sm-4 mx-4" data-bs-dismiss="modal"
+                                style="position: absolute; right: 3%;border-radius:10px;font-weight: 500;">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- PROFILE EDIT SECTION MODAL ENDS HERE -->
+
+
+
+
+
+
+
+
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include jQuery UI library -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <!-- Other libraries and plugins -->
+    <script src="https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+
+
+    <script src="scripts/homePageJS.js"></script>
+    <script src="scripts/angularPageJS.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>

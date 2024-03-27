@@ -1,0 +1,141 @@
+/* remove left and right div accordingly to size */
+
+
+/* ro remove logo of angular and also navbar page surfing items */
+#angularLogoNameChange{
+    visibility: visible;
+    position: relative;
+}
+#angularLogoChange{
+    visibility: hidden;
+    position: absolute;
+}
+#navItemsChange{
+    display:inline;
+}
+@media screen and (max-width:1150px) {
+    #angularLogoNameChange{
+        visibility: hidden;
+        position: absolute;
+    }
+    #angularLogoChange{
+        visibility: visible;
+        position: relative;
+    }
+    #navItemsChange{
+        display: none;
+    }
+    
+}
+
+/* to remove social media handler*/
+#removeLogos{
+    display: inline-block;
+}
+@media screen and (max-width:650px) {
+    #removeLogos{
+        display: none;
+    }
+}
+
+/* to remove input*/
+@media screen and (max-width:270px) {
+    #removeSearchBar{
+        display: none!important;
+    }
+}
+
+/* navbar */
+#overNavbar{
+    /* background-image: url("../assets/image/plainBlueBg.jpg"); */
+    background-color: #0479cc;
+}
+.navbar-nav a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: white;
+    font-weight: 300;
+    border-radius: 5px;
+}
+.navbar-nav a:hover{
+    color: white;
+    background-color: #ffffff2d;
+}
+.navbar-nav a:focus{
+    color: white;
+    border: 0.1rem solid white;
+    background-color: #ffffff2d;
+}
+
+/* hamburger div hover */
+#hamburgerButtonDiv:hover{
+    background-color: #046ab2;
+}
+
+/* searchbar */
+.input-wrapper{
+    width: 100%;
+}
+#searchBar:focus{
+    width: 100%!important;
+    transition: width 0.2s ease-in-out;
+    outline: none;
+}
+
+
+/* left panel */
+.left-right-panel-scrollable-div{
+    overflow: auto;
+    max-height: 85vh;
+}
+.left-panel-p{
+    font-size: 1rem;
+}
+.left-panel-span{
+    padding-left: 1rem;
+}
+.hideToggleButtons{
+    visibility: hidden;
+    position: absolute;
+}
+.showToggleButtons{
+    visibility: visible;
+    position: relative;
+}
+
+.left-panel-button:hover{
+    background-color: #0000001a;
+    p{color: #0379da;}
+    span{color: #0379da;}
+}
+.left-panel-button:active,.left-panel-button:focus{
+    background-color: #0000001a!important;
+    border: 5px solid #0379da!important;
+}
+
+
+
+
+/* right panel */
+.nav-pills a{
+    color: #232323cd;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+
+
+/* content page */
+.content-bullets li{
+    margin-top: 5px;
+}
+.content-bullets li::marker{
+    font-size: small;
+}
+.content-bullets li a{
+    text-decoration: none;
+}
+.content-bullets li a:hover{
+    text-decoration: underline;
+}
